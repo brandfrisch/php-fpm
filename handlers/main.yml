@@ -1,0 +1,22 @@
+---
+# handlers file for php-fpm
+
+- name: start php-fpm
+  service:
+    name: "{{ php_fpm_service_name }}"
+    state: started
+
+- name: stop php-fpm
+  service:
+    name: "{{ php_fpm_service_name }}"
+    state: stopped
+
+- name: restart php-fpm
+  service:
+    name: "{{ php_fpm_service_name }}"
+    state: restarted
+
+- name: reload php-fpm
+  service:
+    name: "{{ php_fpm_service_name }}"
+    state: reloaded

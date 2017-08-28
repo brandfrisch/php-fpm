@@ -1,0 +1,33 @@
+---
+# tasks file for php-fpm
+
+- name: Install PHP-FPM Packages
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - "{{ php_fpm_packages }}"
+  tags:
+    - package
+    - php-fpm
+
+- name: Configure PHP-FPM
+  when: php_fpm_config_files | length > 0
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  with_items:
+    - "{{ php_fpm_config_files }}"
+  notify: "restart php-fpm"
+  tags:
+    - config
+    - php-fpm
+
+- name: Start end enable PHP-fpm
+  service:
+    name: "{{ php_fpm_service_name }}"
+    enabled: yes
+    state: started
+  tags:
+    - service
+    - php-fpm

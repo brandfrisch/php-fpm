@@ -1,0 +1,24 @@
+---
+- hosts: all
+  gather_facts: no
+  vars:
+    goss:
+      package:
+        php7.0-fpm:
+          installed: true
+      service:
+        php7.0-fpm:
+          enabled: true
+          running: true
+
+  pre_tasks:
+
+    - name: Copy tests to remote
+      copy:
+        content: "{{ goss | to_nice_yaml }}"
+        dest: "/tmp/goss.yml"
+
+    - name: test goss files
+      goss:
+        path: "/tmp/goss.yml"
+        format: documentation
