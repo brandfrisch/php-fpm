@@ -1,6 +1,11 @@
 ---
 # tasks file for php-fpm
 
+- name: Install Ondrej PHP PPA
+  apt_repository:
+    repo: ppa:ondrej/php
+    update_cache: yes
+
 - name: Install PHP-FPM Packages
   package:
     name: "{{ item }}"

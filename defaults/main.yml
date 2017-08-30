@@ -1,12 +1,11 @@
 ---
 # defaults file for php-fpm
 
-php_fpm_service_name: php7.0-fpm
+php_fpm_service_name: php7.1-fpm
 
-php_fpm_config_files:
-  - { src: 'php.ini.j2', dest: '/etc/php/7.0/fpm/php.ini' }
-  - { src: 'www.conf.j2', dest: '/etc/php/7.0/fpm/pool.d/www.conf' }
-  - { src: 'php-fpm.conf.j2', dest: '/etc/php/7.0/fpm/php-fpm.conf' }
+php_fpm_config_files: []
 
 php_fpm_packages:
-  - php-fpm
+  - php7.1-fpm
+
+php_fpm_additional_packages: []

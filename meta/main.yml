@@ -9,5 +9,3 @@ galaxy_info:
       versions:
         - xenial
   galaxy_tags: []
-dependencies:
-  - php

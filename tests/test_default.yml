@@ -4,10 +4,10 @@
   vars:
     goss:
       package:
-        php7.0-fpm:
+        php7.1-fpm:
           installed: true
       service:
-        php7.0-fpm:
+        php7.1-fpm:
           enabled: true
           running: true
 
