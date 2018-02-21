@@ -22,6 +22,8 @@
   template:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
+    owner: root
+    group: root
   with_items:
     - "{{ php_fpm_config_files }}"
   notify: "restart php-fpm"

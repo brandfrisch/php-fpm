@@ -1,4 +1,4 @@
-php-fpm [![Build Status](https://travis-ci.org/brandfrisch/php-fpm.svg?branch=master)](https://travis-ci.org/brandfrisch/php-fpm)
+php-fpm
 =========
 
 This is a rule to setup the php-fpm on a unix system
