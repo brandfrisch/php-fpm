@@ -24,6 +24,7 @@
     dest: "{{ item.dest }}"
     owner: root
     group: root
+    mode: 0644
   with_items:
     - "{{ php_fpm_config_files }}"
   notify: "restart php-fpm"
